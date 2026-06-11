@@ -4,12 +4,12 @@ class Squish < Formula
   version "0.4.0"
   license "MIT"
 
-  # HEIC/AVIF support links these at load time.
+  # dav1d and libheif are linked at load time (HEIC/AVIF support); ffmpeg and
+  # gifsicle are runtime subprocess dependencies for video/audio and GIF.
   depends_on "dav1d"
-  depends_on "libheif"
-  # Runtime subprocess dependencies for GIF and video/audio support.
   depends_on "ffmpeg"
   depends_on "gifsicle"
+  depends_on "libheif"
 
   on_macos do
     if Hardware::CPU.arm?
