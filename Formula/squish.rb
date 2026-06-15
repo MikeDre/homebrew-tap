@@ -1,7 +1,7 @@
 class Squish < Formula
   desc "Super fast local file optimisation: images, video, audio, and code"
   homepage "https://github.com/MikeDre/squish"
-  version "0.5.0"
+  version "0.7.0"
   license "MIT"
 
   # dav1d and libheif are linked at load time (HEIC/AVIF support); ffmpeg and
@@ -13,16 +13,23 @@ class Squish < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/MikeDre/squish/releases/download/v0.5.0/squish-v0.5.0-aarch64-apple-darwin.tar.gz"
-      sha256 "009eac33efae8facaeae54ab7785236879fd69f1f401ebee3cff1cd4e49821aa"
+      url "https://github.com/MikeDre/squish/releases/download/v0.7.0/squish-v0.7.0-aarch64-apple-darwin.tar.gz"
+      sha256 "d6a01219480f5c5c31262228c0716cf2e6974420c1f33e88c227cb092647e3c9"
     else
-      url "https://github.com/MikeDre/squish/releases/download/v0.5.0/squish-v0.5.0-x86_64-apple-darwin.tar.gz"
-      sha256 "6437c8a149f86f5ec4901ff88a31d360a5fd13aa71c2e979c9b9840c23f75ed4"
+      url "https://github.com/MikeDre/squish/releases/download/v0.7.0/squish-v0.7.0-x86_64-apple-darwin.tar.gz"
+      sha256 "4a4aa04d87b7ecd66dbb34fc4c32fa74259216b9ca3903c8b2d37400a9802583"
     end
   end
 
   def install
     bin.install "squish"
+  end
+
+  def caveats
+    <<~EOS
+      To add the "Right-click → Squish" Finder Quick Action, run:
+        squish finder-action install
+    EOS
   end
 
   test do
