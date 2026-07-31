@@ -1,7 +1,7 @@
 class Squish < Formula
   desc "Super fast local file optimisation: images, video, audio, and code"
   homepage "https://github.com/MikeDre/squish"
-  version "0.8.0"
+  version "0.9.0"
   license "MIT"
 
   # dav1d and libheif are linked at load time (HEIC/AVIF support); ffmpeg and
@@ -13,11 +13,11 @@ class Squish < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/MikeDre/squish/releases/download/v0.8.0/squish-v0.8.0-aarch64-apple-darwin.tar.gz"
-      sha256 "667ad5e0353513a1d2c29fe9d1dc628fc6d3e4d58d62ddc1addff84bfd9f1ebc"
+      url "https://github.com/MikeDre/squish/releases/download/v0.9.0/squish-v0.9.0-aarch64-apple-darwin.tar.gz"
+      sha256 "ac5fd602a986ce012944bc8241495281d9bca99e2092e9e0e8c3b188e5a686aa"
     else
-      url "https://github.com/MikeDre/squish/releases/download/v0.8.0/squish-v0.8.0-x86_64-apple-darwin.tar.gz"
-      sha256 "c5a92e6cdd8e2a8efdf8245d0c9d3ea0deb68cfd92ac32e24d99f07693b2a733"
+      url "https://github.com/MikeDre/squish/releases/download/v0.9.0/squish-v0.9.0-x86_64-apple-darwin.tar.gz"
+      sha256 "e0fbb0a04584a1ff5ec5cdae0ab8e95109c550e65b409a1aaf74d03c3a36083a"
     end
   end
 
